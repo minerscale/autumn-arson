@@ -1,0 +1,77 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://res/gfx/background.png" type="Texture" id=1]
+[ext_resource path="res://res/gfx/fire/fire-sprite/frame0000.png" type="Texture" id=2]
+[ext_resource path="res://res/gfx/fire/fire-sprite/frame0001.png" type="Texture" id=3]
+[ext_resource path="res://res/gfx/fire/fire-sprite/frame0002.png" type="Texture" id=4]
+[ext_resource path="res://res/gfx/fire/fire-sprite/frame0003.png" type="Texture" id=5]
+[ext_resource path="res://res/gfx/fire/fire-sprite/frame0004.png" type="Texture" id=6]
+[ext_resource path="res://res/gfx/fire/fire-sprite/frame0005.png" type="Texture" id=7]
+[ext_resource path="res://res/gfx/fire/fire-light/frame0000.png" type="Texture" id=8]
+[ext_resource path="res://res/gfx/fire/fire-light/frame0001.png" type="Texture" id=9]
+[ext_resource path="res://res/gfx/fire/fire-light/frame0002.png" type="Texture" id=10]
+[ext_resource path="res://res/gfx/fire/fire-light/frame0003.png" type="Texture" id=11]
+[ext_resource path="res://res/gfx/fire/fire-light/frame0004.png" type="Texture" id=12]
+[ext_resource path="res://res/gfx/fire/fire-light/frame0005.png" type="Texture" id=13]
+[ext_resource path="res://res/gfx/icon.png" type="Texture" id=14]
+
+[sub_resource type="AnimatedTexture" id=1]
+frames = 6
+fps = 12.0
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 3 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 4 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 5 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 6 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 7 )
+frame_5/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=2]
+frames = 6
+fps = 12.0
+frame_0/texture = ExtResource( 8 )
+frame_1/texture = ExtResource( 9 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 10 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 11 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 12 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 13 )
+frame_5/delay_sec = 0.0
+
+[node name="main" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ -654.786 ],
+"_edit_lock_": true
+}
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Fire" type="Sprite" parent="."]
+position = Vector2( 625.411, 358.268 )
+scale = Vector2( 4, 4 )
+texture = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="Fire"]
+texture = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 651.768, 475.651 )
+texture = ExtResource( 14 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
