@@ -15,9 +15,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-position = Vector2( 280.237, 210.858 )
-
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
 margin_right = 1924.0

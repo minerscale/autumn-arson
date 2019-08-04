@@ -27,11 +27,11 @@ extents = Vector2( 132, 10 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( -4, 40 )
+position = Vector2( -4, 32 )
 shape = SubResource( 2 )
