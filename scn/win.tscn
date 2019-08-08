@@ -1,0 +1,16 @@
+[gd_scene format=2]
+
+[node name="win" type="Node2D"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+text = "You win!
+
+Good job! The N U T T blesses thee!
+
+Type your wishes in this massive text box. You earned it <3
+
+"

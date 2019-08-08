@@ -1,5 +1,7 @@
 extends Node
 
+# Prints the FPS, for debug purposes.
+
 const TIMER_LIMIT = 2.0
 var timer = 0.0
 

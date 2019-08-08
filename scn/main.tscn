@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/main.gd" type="Script" id=1]
-[ext_resource path="res://res/gfx/icon.png" type="Texture" id=2]
+[ext_resource path="res://src/fade.gd" type="Script" id=2]
 [ext_resource path="res://scn/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scn/crumble-platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scn/moving-platform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scn/short-platform.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scn/long-platform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scn/enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://res/gfx/background.png" type="Texture" id=9]
+[ext_resource path="res://scn/nutt.tscn" type="PackedScene" id=10]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,26 +18,105 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
-margin_right = 1924.0
-margin_bottom = 1084.0
-texture = ExtResource( 2 )
-expand = true
-stretch_mode = 2
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-gravity = 800
-jump_vel = 400
+position = Vector2( 308, 644 )
+jump_vel = 500
 
-[node name="crumble-platform" parent="." instance=ExtResource( 4 )]
-position = Vector2( 620, 416 )
+[node name="level" type="Node" parent="."]
+editor/display_folded = true
 
-[node name="moving-platform" parent="." instance=ExtResource( 5 )]
-position = Vector2( 320, 324 )
+[node name="crumble-platform" parent="level" instance=ExtResource( 4 )]
+position = Vector2( 624, 716 )
 
-[node name="short-platform" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1136, 596 )
+[node name="crumble-platform2" parent="level" instance=ExtResource( 4 )]
+position = Vector2( 1216, 712 )
 
-[node name="long-platform" parent="." instance=ExtResource( 7 )]
-position = Vector2( 880, 536 )
+[node name="crumble-platform3" parent="level" instance=ExtResource( 4 )]
+position = Vector2( 1420, 896 )
+
+[node name="crumble-platform4" parent="level" instance=ExtResource( 4 )]
+position = Vector2( 3232, 816 )
+
+[node name="crumble-platform5" parent="level" instance=ExtResource( 4 )]
+position = Vector2( 5188, 876 )
+
+[node name="moving-platform" parent="level" instance=ExtResource( 5 )]
+position = Vector2( 1884, 872 )
+
+[node name="moving-platform2" parent="level" instance=ExtResource( 5 )]
+position = Vector2( 3764, 800 )
+
+[node name="short-platform" parent="level" instance=ExtResource( 6 )]
+position = Vector2( 1140, 896 )
+
+[node name="short-platform3" parent="level" instance=ExtResource( 6 )]
+position = Vector2( 1640, 908 )
+
+[node name="short-platform2" parent="level" instance=ExtResource( 6 )]
+position = Vector2( 2636, 900 )
+
+[node name="short-platform4" parent="level" instance=ExtResource( 6 )]
+position = Vector2( 3500, 772 )
+
+[node name="short-platform5" parent="level" instance=ExtResource( 6 )]
+position = Vector2( 4416, 1116 )
+
+[node name="short-platform7" parent="level" instance=ExtResource( 6 )]
+position = Vector2( 4592, 1048 )
+
+[node name="short-platform8" parent="level" instance=ExtResource( 6 )]
+position = Vector2( 4768, 968 )
+
+[node name="short-platform9" parent="level" instance=ExtResource( 6 )]
+position = Vector2( 4932, 856 )
+
+[node name="short-platform6" parent="level" instance=ExtResource( 6 )]
+position = Vector2( 4552, 772 )
+
+[node name="long-platform" parent="level" instance=ExtResource( 7 )]
+position = Vector2( 884, 836 )
+
+[node name="long-platform2" parent="level" instance=ExtResource( 7 )]
+position = Vector2( 224, 692 )
+
+[node name="long-platform3" parent="level" instance=ExtResource( 7 )]
+position = Vector2( 2892, 864 )
+
+[node name="long-platform5" parent="level" instance=ExtResource( 7 )]
+position = Vector2( 5500, 868 )
+
+[node name="long-platform4" parent="level" instance=ExtResource( 7 )]
+position = Vector2( 4164, 1032 )
+
+[node name="enemy" parent="level" instance=ExtResource( 8 )]
+position = Vector2( 784, 808 )
+distance = 52
+
+[node name="enemy2" parent="level" instance=ExtResource( 8 )]
+position = Vector2( 4052, 1004 )
+distance = 52
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground"]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -960, -540 )
+scale = Vector2( 4, 4 )
+z_index = -4
+motion_scale = Vector2( 0, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.584314, 0.584314, 0.584314, 1 )
+margin_right = 480.0
+margin_bottom = 270.0
+texture = ExtResource( 9 )
+
+[node name="nutt" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5580, 780 )
